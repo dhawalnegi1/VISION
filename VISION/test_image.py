@@ -36,7 +36,7 @@ with tf.Graph().as_default():
         margin = 44
         frame_interval = 3
         batch_size = 1000
-        image_size = 182
+        image_size = 100
         input_image_size = 160
         
         HumanNames = os.listdir(train_img)
@@ -64,7 +64,7 @@ with tf.Graph().as_default():
         # ret, frame = video_capture.read()
         frame = cv2.imread(img_path,0)
 
-        frame = cv2.resize(frame, (0,0), fx=1, fy=1)    #resize frame (optional)
+        frame = cv2.resize(frame, (640,480), fx=1, fy=1)    #resize frame (optional)
 
         curTime = time.time()+1    # calc fps
         timeF = frame_interval
@@ -139,6 +139,6 @@ with tf.Graph().as_default():
                 print('Unable to align')
         cv2.imshow('Image', frame)
 
-        if cv2.waitKey(1000000) & 0xFF == ord('q'):
+        if cv2.waitKey(1000) & 0xFF == ord('q'):
             sys.exit("Thanks")
         cv2.destroyAllWindows()
