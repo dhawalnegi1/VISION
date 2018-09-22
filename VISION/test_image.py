@@ -139,6 +139,6 @@ with tf.Graph().as_default():
                 print('Unable to align')
         cv2.imshow('Image', frame)
 
-        if cv2.waitKey(1000) & 0xFF == ord('q'):
+        if cv2.waitKey(100000) & 0xFF == ord('q'):
             sys.exit("Thanks")
         cv2.destroyAllWindows()
